@@ -50,7 +50,7 @@ node default {
     mode   => '0644',
     path   => '/etc/hosts',
     host_aliases  => 'testing.puppetlabs.vm', testing',
-    ip      => '127.0.0.1',
+    ip      => '10.120.100.12',
     }
     
     
