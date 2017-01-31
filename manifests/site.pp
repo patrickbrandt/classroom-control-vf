@@ -44,4 +44,8 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   notify { 'you have changed stuff': }
+  file { '/etc/motd':
+    ensure => file,
+    content => 'Today I learned how to puppetize all the things!',
+  }
 }
