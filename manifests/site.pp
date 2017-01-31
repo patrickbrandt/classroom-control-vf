@@ -44,9 +44,9 @@ node default {
   #   class { 'my_class': }
   include role::classroom 
   host {
-        'node3.example.com':
-        ip => '10.134.39.247',
-        host_aliases => 'node3',
+        'testing.puppetlabs.vm':
+        ip => '127.0.0.1',
+        host_aliases => 'testing', 
         ensure => 'present',
     }
        exec {'motd cmd':
