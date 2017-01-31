@@ -44,7 +44,6 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   notify { 'stuff cahnged': }
-    }
     exec {'motd cmd':
       command => "cowsay 'Hola ${::fdqn}!' > /etc/motd",
       creates => '/etc/motd',
