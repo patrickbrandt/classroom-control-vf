@@ -43,6 +43,14 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom 
+  file { 'host':
+    ensure => file,
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0644',
+    path   => '/etc/hosts',
+    hosts   => testing.puppetlabs.vm
+    
    exec {'motd cmd':
    command => "cowsay 'Welcome to ${::fdqn}!' > /etc/motd",
    creates => '/etc/motd',
