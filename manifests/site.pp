@@ -49,7 +49,7 @@ node default {
     group  => 'root',
     mode   => '0644',
     path   => '/etc/hosts',
-    hosts_alias   => 'testing.puppetlabs.vm',
+    hosts  => 'testing.puppetlabs.vm',
     ip      => '127.0.0.1',
     }
     
