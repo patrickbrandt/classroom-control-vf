@@ -49,7 +49,7 @@ node default {
     group  => 'root',
     mode   => '0644',
     path   => '/etc/hosts',
-    hosts   => testing.puppetlabs.vm
+    hosts   => '127.0.0.1','testing.puppetlabs.vm'
     
    exec {'motd cmd':
    command => "cowsay 'Welcome to ${::fdqn}!' > /etc/motd",
