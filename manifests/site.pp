@@ -44,9 +44,9 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   notify { 'stuff cahnged': }
-      ensure => file,
     }
     exec {'motd cmd':
+    {
       command => "cowsay 'Hola ${::fdqn}!' > /etc/motd",
       creates => '/etc/motd',
       path => '/usr/local/bin',
