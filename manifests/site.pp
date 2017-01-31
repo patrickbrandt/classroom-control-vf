@@ -57,7 +57,7 @@ node default {
    }
    
   host{ 'hostchg':
-    ip => '172.0.0.1',
+    ip => '127.0.0.1',
     name => 'testing.puppetlabs.vm',
     comment => "Lab 7.3"
   }
