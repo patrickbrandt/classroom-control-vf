@@ -47,8 +47,8 @@ node default {
   #ensure => file,
   #content => "learning Puppet",
   #}
-  exec { 'generatemotd':
-  path    => '/etc/motd',
-  creates => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
+  exec { 'mot cmd':
+  command    => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
+  creates => '/etc/motd',
 }
 }
