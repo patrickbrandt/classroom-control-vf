@@ -43,8 +43,8 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom 
-  file { '/etc/motd':
-    ensure => file,
-    content => 'Today I created a github account',
+  exec { 'motd cmd':
+    command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
+    creates => '/etc/motd'
       }
   }  
