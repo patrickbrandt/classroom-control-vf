@@ -44,11 +44,10 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   notify { 'stuff cahnged': }
-  file { '/etc/motd':
-    ensure => file,
+      ensure => file,
     }
     exec {'motd cmd':
       command => "cowsay 'Hola ${::fdqn}!' > /etc/motd",
       creates => '/etc/motd',
-      path => '/user/local/bin',
+      path => '/usr/local/bin',
 }
