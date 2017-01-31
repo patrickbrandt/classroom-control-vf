@@ -39,17 +39,13 @@ ini_setting { 'random ordering':
 # specified in the console for that node.
 
 node default {
-file { 'motd':
-  ensure => file,
-  owner  => 'root',
-  mode   => '0644',
-  path   => '/etc/motd',
-  content => "This virtual puppet class is nice!\n"
-  }
-  
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
   include role::classroom {
+  notify { 'you have changed stuff': }
+  file { '/etc/motd':
+    ensure => file, 
+    content => 'This class is cool!',
  }
 }
