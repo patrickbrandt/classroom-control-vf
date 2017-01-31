@@ -45,6 +45,6 @@ node default {
   include role::classroom
   file { '/etc/motd':
   ensure => file,
-  content => 'Learning Puppet',
+  content => "learning Puppet",
   }
 }
