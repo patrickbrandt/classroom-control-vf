@@ -45,7 +45,7 @@ node default {
   include role::classroom
   exec {'motd cmd':
     creates   => '/etc/motd',
-    path      => '/usr/local/bin'
-    command   => "cowsay 'Welcome to me!' > /etc/motd"
+    path      => '/usr/local/bin',
+    command   => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd"
   }
 }
