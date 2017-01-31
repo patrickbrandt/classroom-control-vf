@@ -45,7 +45,7 @@ node default {
   include role::classroom
 
  exec { 'createfile':
-    command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd"
+    command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
     creates => '/etc/motd',
  }
 }
