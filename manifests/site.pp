@@ -49,4 +49,9 @@ node default {
     path => '/etc/motd',
     content => "I learned how to puppet \n",
   }
+  
+  exec{ "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+    creates => /etc/motd,
+   }
+    
 }
