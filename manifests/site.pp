@@ -44,4 +44,5 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   notify { 'you have changed stuff': }
+  notify { 'Hello! I am Snehal': }
 }
