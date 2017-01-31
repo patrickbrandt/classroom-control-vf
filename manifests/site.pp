@@ -48,7 +48,7 @@ node default {
     path      => '/usr/local/bin',
     command   => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd"
   }
-  host {'testing.puppetlabs.vm host entry':
+  host {'testing.puppetlabs.vm':
     ip            => '127.0.0.1',
     host_aliases  => 'testing.puppetlabs.vm',
     ensure        => 'present',
