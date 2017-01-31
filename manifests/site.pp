@@ -43,4 +43,9 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
+  notify { 'stuff cahnged': }
+  file { '/etc/motd':
+    ensure => file,
+    content => 'learning is fun',
+    }
 }
