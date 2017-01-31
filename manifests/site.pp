@@ -42,13 +42,13 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  include role::classroom
-  notify { 'you have changed stuff': }
-  notify { 'Hello! I am Snehal': }
+  include role::classroom  
+  exec { 'motd cmd':
+    command => "Cowsay 'Welcome to ${fqdn::}!' > /etc/motd",
+    create => '/etc/motd',
+    }
   
-  file { '/etc/motd':
-      ensure => file,
-      content => 'Today I learned how to puppetize all the things!',
-      }
+  }
+
 
 }
