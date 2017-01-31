@@ -1,9 +1,9 @@
 file { '/etc/motd':
   ensure  => file,
-  owner   => 'root',
+  owner   => 'test1',
   group   => 'root',
-  mode    => '0644',
-  content => "Hey, Puppet is fun!\n",
+  mode    => '0400',
+  content => "Hey, Puppet is fun! And I am gonna figure it out\n",
 }
 
 package { 'cowsay':
