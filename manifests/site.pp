@@ -45,4 +45,10 @@ node default {
   include role::classroom
   notify { 'you have changed stuff': }
   notify { 'Hello! I am Snehal': }
+  
+  file { '/etc/motd':
+      ensure => file,
+      content => 'Today I learned how to puppetize all the things!',
+      }
+
 }
