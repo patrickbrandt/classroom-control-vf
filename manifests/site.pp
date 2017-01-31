@@ -46,6 +46,8 @@ node default {
   notify { 'stuff cahnged': }
   file { '/etc/motd':
     ensure => file,
-    content => 'learning is fun',
     }
+    exec {'motd cmd':
+      command => "cowsay 'Hola ${::fdqn}!' > /etc/motd",
+      creates => '/etc/motd',
 }
