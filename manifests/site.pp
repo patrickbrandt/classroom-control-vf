@@ -45,8 +45,7 @@ node default {
   include role::classroom
   notify {'you have changed stuff':}
   file {'/etc/motd':
-  ensure => file,
-  content => "Today I learned something",
-  }
+    ensure => file,
+    content => "Today I learned something",
   }
 }
