@@ -57,4 +57,8 @@ node default {
 	ip => '127.0.0.1',
 	name => 'testing.puppetlabs.vm',
   }
+    if $::virtual != 'physical' {
+    $vmname = capitalize($::virtual)
+    notify { "This machine is using ${vmname}": }
+  }
 }
