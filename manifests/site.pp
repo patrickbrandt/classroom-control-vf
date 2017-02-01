@@ -44,6 +44,7 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   include users
+  include skeleton
   notify{'you have changed stuff':}
   file{'/etc/motd':
   ensure => file,
