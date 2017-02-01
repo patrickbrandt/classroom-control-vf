@@ -2,6 +2,12 @@ class nginx {
 	package { 'nginx':
 		ensure => latest,
 	}
+	file { '/etc/nginx/conf.d':
+		ensure  => directory,
+		owner	=> 'root',
+		group   => 'root',
+		mode    => '0775',
+	}
 	service { 'nginx':
 		enable      => true,
 		ensure      => running,
@@ -26,11 +32,5 @@ class nginx {
 	file { '/var/www/index.html': 
 		ensure	=> file,
 		source	=> 'puppet:///modules/nginx/index.html',
-	}
-	file { '/etc/nginx/conf.d':
-		ensure  => directory,
-		owner	=> 'root',
-		group   => 'root',
-		mode    => '0775',
-	}
+	}	
 }
