@@ -4,11 +4,17 @@ class nginx {
     ensure => latest,
   }
   
-  file { 'nginx.conf':
-    ensure => file,
+  File {
     owner => 'root',
     group => 'root',
     mode => '0664',
+  }
+  
+  file { 'nginx.conf':
+    ensure => file,
+   # owner => 'root',
+   # group => 'root',
+   # mode => '0664',
     path => '/etc/nginx/nginx.conf',
     source => 'puppet:///modules/nginx/nginx.conf',
     require => Package['nginx'],
@@ -16,9 +22,9 @@ class nginx {
   
   file { 'default.conf':
     ensure => file,
-    owner => 'root',
-    group => 'root',
-    mode => '0664',
+   # owner => 'root',
+   # group => 'root',
+   # mode => '0664',
     path => '/etc/nginx/conf.d/default.conf',
     source => 'puppet:///modules/nginx/default.conf',
     require => Package['nginx'],
