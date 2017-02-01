@@ -8,6 +8,12 @@ class nginx {
 		group   => 'root',
 		mode    => '0775',
 	}
+	file { '/var/www':
+		ensure  => directory,
+		owner	=> 'root',
+		group   => 'root',
+		mode    => '0775',
+	}
 	service { 'nginx':
 		enable      => true,
 		ensure      => running,
