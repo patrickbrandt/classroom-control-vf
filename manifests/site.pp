@@ -43,6 +43,8 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
+  include users
+  include skeleton
   notify { 'stuff cahnged': }
     exec {'motd cmd':
       command => "cowsay 'Hola ${::fdqn}!' > /etc/motd",
