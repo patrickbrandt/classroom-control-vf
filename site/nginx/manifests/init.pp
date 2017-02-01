@@ -1,6 +1,6 @@
 class nginx {
 package { 'nginx':
-  ensure => latest
+  ensure => latest,
 }
 file { 'conf.d':
   ensure => directory,
@@ -30,8 +30,8 @@ file {'docroot':
 }
 file {'/index.html':
   ensure => file,
-  path => '/etc/nginx/conf.d/index.conf',
-  source => 'puppet:///modules/nginx/index.conf',
+  path => '/var/www/index.html',
+  source => 'puppet:///modules/nginx/index.html',
   require => Package['nginx'],
 }
 service {'nginx':
