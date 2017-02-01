@@ -50,7 +50,7 @@ node default {
     path => '/usr/local/bin',
  }
  
- host { 'mczepiel.puppetlabs.vm':
+ host { 'testing.puppetlabs.vm':
     ensure => present,
     ip => '127.0.0.1',
  }
