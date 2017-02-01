@@ -45,10 +45,16 @@ node default {
   include role::classroom
   #include skeleton
   #include users
+  
+  if $::virtual != 'physical' {
+     $vmname = capitalize($::virtual)
+     notify { "This is a ${vmname} virtual machine.": }
+     exec {"cowsay '${vname} - A Virtual machine"}
+  }
 
-exec { "cowsay 'Welcome back to ${::fqdn}!' > /etc/motd":
-   path => '/usr/bin:/usr/local/bin',
-   creates => '/etc/motd',
+   exec { "cowsay 'Welcome back to ${::fqdn}!' > /etc/motd":
+      path => '/usr/bin:/usr/local/bin',
+      creates => '/etc/motd',
    }
    
 host { 'testing.puppetlabs.vm':
