@@ -43,4 +43,8 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
+  if $::virtual != 'physical' {
+  	$vm = capitalize($::virtual)
+  	notify { "this is a vm: $vm": }
+  }
 }
