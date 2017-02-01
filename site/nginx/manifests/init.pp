@@ -34,7 +34,7 @@ file {'/index.html':
   source => 'puppet:///modules/nginx/index.conf',
   require => Package['nginx'],
 }
-service {'nginx'
+service {'nginx':
   ensure => running,
   enable => true,
   subscribe => File['nginx.conf', 'default.conf'],
