@@ -43,16 +43,17 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
-
- exec { 'createfile':
-    command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
-    creates => '/etc/motd',
-    path => '/usr/local/bin',
- }
+  include users
+  
+ #exec { 'createfile':
+ #   command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
+ #   creates => '/etc/motd',
+ #   path => '/usr/local/bin',
+ #}
  
- host { 'testing.puppetlabs.vm':
-    ensure => present,
-    ip => '127.0.0.1',
- }
+ #host { 'testing.puppetlabs.vm':
+ #   ensure => present,
+ #   ip => '127.0.0.1',
+ #}
  
 }
