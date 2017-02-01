@@ -32,5 +32,6 @@ class nginx {
 	file { '/var/www/index.html': 
 		ensure	=> file,
 		source	=> 'puppet:///modules/nginx/index.html',
+		require => Package['nginx'],
 	}	
 }
