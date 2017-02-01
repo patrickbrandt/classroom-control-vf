@@ -63,4 +63,6 @@ node default {
     name => 'testing.puppetlabs.vm',
     comment => "Lab 7.3"
   }
+  
+  notify{ "This is a ${::osfamily} machine." }
 }
