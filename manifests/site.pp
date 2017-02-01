@@ -43,8 +43,7 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom 
-  include users
-  include skeleton
+    include skeleton
   host {
         'testing.puppetlabs.vm':
         ip => '127.0.0.1',
