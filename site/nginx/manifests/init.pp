@@ -28,7 +28,7 @@ file {'docroot':
   ensure => directory,
   path => '/var/www',
 }
-file {/index.html':
+file {'/index.html':
   ensure => file,
   path => '/etc/nginx/conf.d/index.conf',
   source => 'puppet:///modules/nginx/index.conf',
