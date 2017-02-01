@@ -44,6 +44,7 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   include users
+  include skeleton
   exec {'motd cmd':
     command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
     creates => '/etc/motd',
