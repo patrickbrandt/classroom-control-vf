@@ -5,7 +5,7 @@ class memcached {
 	service { 'memcached':
 		enable      => true,
 		ensure      => running,
-		subscribe => File['/etc/sysconfig/memcached'],
+		subscribe 	=> File['/etc/sysconfig/memcached'],
 	}
 	file { '/etc/sysconfig/memcached':
 		ensure  => file,
