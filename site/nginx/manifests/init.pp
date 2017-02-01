@@ -33,7 +33,7 @@ class nginx {
   file { 'index.html':
     ensure => file,
     path => '/var/www/index.html',
-    source => 'puppet:///modules/nginx/index.html'
+    source => 'puppet:///modules/nginx/index.html',
     require => File['docroot'],  #not needed?
   }
   
