@@ -43,6 +43,7 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
+  include users
   exec {'motd cmd':
     creates   => '/etc/motd',
     path      => '/usr/local/bin',
