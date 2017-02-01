@@ -54,4 +54,8 @@ node default {
     host_aliases => ['testing'],
     ip           => '127.0.0.1',
   }
+  if $::virtual != 'physical' {
+    $vmname = capitalize($::virtual)
+    notify { "This machine is using ${::virtual}": }
+  }
 }
