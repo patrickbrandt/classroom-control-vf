@@ -38,6 +38,16 @@ ini_setting { 'random ordering':
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
+node 'drewbilee.puppetlabs.vm' {
+  include role::classroom
+  notify { "Node-specific configuration": }
+}
+
+node /^.*\.puppetlabs\.vm$/ {
+  include role::classroom
+  notify { "Group configuration": }
+}
+
 node default {
   # This is where you can declare classes for all nodes.
   # Example:
