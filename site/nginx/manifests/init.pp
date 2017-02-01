@@ -47,7 +47,7 @@ class nginx {
     ensure => running,
     enable => true,
     require => Package['nginx'],
-    subscribe => File['nginx,conf', 'default.conf'],
+    subscribe => File['nginx.conf', 'default.conf'],
   }
   
 }
