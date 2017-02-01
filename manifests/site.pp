@@ -45,6 +45,6 @@ node default {
   include role::classroom
   if $::virtual != 'physical' {
     $vmname = capitalize($::virtual)
-    notify {"This machine is using ${::virtual}":}
+    notify {"This machine is using ${vmname}":}
     }
   } 
