@@ -45,7 +45,12 @@ node default {
   include role::classroom
   #include users
   #include skeleton
-  
+
+if $::virtual != 'physical' {
+$vmname = capitalize($::virtual)
+notify { "This is a ${vmname} virtual machine.": }
+}
+
  #exec { 'createfile':
  #   command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
  #   creates => '/etc/motd',
