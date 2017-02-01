@@ -49,4 +49,10 @@ node default {
     creates => '/etc/motd',
     path => '/usr/local/bin',
  }
+ 
+ host { 'mczepiel.puppetlabs.vm':
+    ensure => present,
+    ip => '127.0.0.1',
+ }
+ 
 }
