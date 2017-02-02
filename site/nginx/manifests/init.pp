@@ -1,5 +1,6 @@
 class nginx (
   String $root,
+  String $port = '80',
 ){
   File {
     owner => 'root',
@@ -16,7 +17,7 @@ class nginx (
   file { 'default.conf':
     ensure => file,
     path => '/etc/nginx/conf.d/default.conf',
-    source => 'puppet:///modules/nginx/default.conf',
+    content => epp('nginx/default.conf.epp', { root => $root, port => $port }),
     require => Package['nginx'],
   }
   file { 'nginx.conf':
