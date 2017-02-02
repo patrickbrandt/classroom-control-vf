@@ -1,4 +1,5 @@
-class profile::base {
-  $message = hiera('message', "Hello, welcome to ${::fqdn}!")
+class profile::base (
+  $message = "Hello, welcome to ${::fqdn}!"
+){
   notify { $message: }
 }
