@@ -1,2 +1,2 @@
 ---
-message: This comes from Hiera!
+profile::base::message: This comes from Hiera!
