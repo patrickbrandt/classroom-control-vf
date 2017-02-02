@@ -1,4 +1,6 @@
-class nginx {
+class nginx (
+  $docroot = '/var/www',
+) {
   
   package { 'nginx':
     ensure => latest,
@@ -32,7 +34,7 @@ class nginx {
   
   file { 'docroot':
     ensure => directory,
-    path => '/var/www',
+    path => $docroot,
     require => Package['nginx'],
   }
   
