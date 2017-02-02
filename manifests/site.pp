@@ -34,16 +34,5 @@ node default {
   # Example:   
   #   class { 'my_class': }    
   include role::classroom    
-  include skeleton    
-  exec {'motd cmd':      
-  command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",      
-  creates => '/etc/motd',      
-  path => '/usr/local/bin',    }    
-  host { 'testing.puppetlabs.vm':      
-  ensure       => 'present',      
-  host_aliases => ['testing'],      
-  ip           => '127.0.0.1',    }    
-  if $::virtual != 'physical' {      
-  $vmname = capitalize($::virtual)      
-  notify { "This machine is using ${vmname}": }  } 
+  
 }
