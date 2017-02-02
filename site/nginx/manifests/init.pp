@@ -1,4 +1,6 @@
-class nginx {
+class nginx (
+  String $root,
+  ){
   File {
     owner => 'root',
     group => 'root',
