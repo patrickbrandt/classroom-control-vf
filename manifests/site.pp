@@ -64,5 +64,5 @@ node default {
     comment => "Lab 7.3"
   }
   
-  notify{ "This is a ${::osfamily} machine." }
+  notify{ "This is a ${::osfamily} machine.": }
 }
