@@ -1,1 +1,8 @@
+server {
+    listen <%= $port %>;
 
+    root <%= $root %>;
+    index index.html index.htm;
+
+    server_name _;
+}
