@@ -1,4 +1,7 @@
+node default {
 class nginx {
+  root => '/var/www/html',
+  }
 File {
 owner => 'root',
 group => 'root',
