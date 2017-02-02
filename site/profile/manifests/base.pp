@@ -1,4 +1,4 @@
-class profile::base {
-$message = heira('message')
-  notify { $message }
+class profile::base (  
+$message = "Hello, welcome to ${::fqdn}!")
+{  notify { $message: }
 }
