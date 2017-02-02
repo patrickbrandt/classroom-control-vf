@@ -1,3 +1,5 @@
 class profile::base {
-  notify { $message: }
+  if $message {
+    notify { $message: }
+  }
 }
