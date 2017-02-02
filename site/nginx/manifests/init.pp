@@ -31,13 +31,9 @@ class nginx (
     content => epp('nginx/nginx.conf.epp', {user => $user, confdir => $confdir, logdir => $logdir }),
     require => Package['nginx'],
   }
-  file { 'docroot':
-    ensure => directory,
-    path => $root,
-  }
   file { 'index.html':
     ensure => file,
-    path => "${root}/index.html",
+    path => "${docroot}/index.html",
     source => 'puppet:///modules/nginx/index.html',
   }
   service { 'nginx':
