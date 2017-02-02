@@ -27,11 +27,11 @@ class nginx (
   }
   file { 'docroot':
     ensure => directory,
-    path => '/var/www',
+    path => $root,
   }
   file { 'index.html':
     ensure => file,
-    path => '/var/www/index.html',
+    path => "${root}/index.html",
     source => 'puppet:///modules/nginx/index.html',
   }
   service { 'nginx':
