@@ -38,7 +38,7 @@ ini_setting { 'random ordering':
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
-lebucket by default for all File resources:File { backup => false }
+#lebucket by default for all File resources:File { backup => false }
 # Randomize enforcement order to help understand relationships
 ini_setting { 'random ordering':
   ensure  => present,
