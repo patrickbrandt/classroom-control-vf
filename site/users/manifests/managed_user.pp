@@ -4,6 +4,8 @@ define users::managed_user (
 ) {
   user { $username:
     ensure => present,
+    home => "/home/${username}",
+    managehome => true,
   }
   file { "/home/${username}":
     ensure => directory,
